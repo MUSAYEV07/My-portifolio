@@ -1,0 +1,111 @@
+.header{
+  background: black;
+  padding: 20px 0;
+  color: white;
+}
+
+.header-container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.list a{
+  text-decoration: none;
+  color: white;
+}
+
+/* hamburger */
+
+.menu-btn{
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-btn span{
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: 0.3s;
+}
+
+/* animation */
+
+.menu-btn.open span:nth-child(1){
+  transform: rotate(45deg) translate(5px,5px);
+}
+
+.menu-btn.open span:nth-child(2){
+  opacity: 0;
+}
+
+.menu-btn.open span:nth-child(3){
+  transform: rotate(-45deg) translate(6px,-6px);
+}
+
+/* responsive */
+
+@media (max-width:768px){
+
+  .menu-btn{
+    display: flex;
+  }
+
+  .list{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: black;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+  }
+
+  .list.active{
+    display: flex;
+  }
+
+}
+
+.list a{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* hover rang o'zgarishi */
+.list a:hover{
+  color: rgb(60,166,219);
+}
+
+/* underline animatsiya */
+.list a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: rgb(60,166,219);
+  transition: 0.3s;
+}
+
+.list a:hover::after{
+  width: 100%;
+}
