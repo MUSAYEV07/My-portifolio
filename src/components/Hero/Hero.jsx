@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
-import heroImg from "./images.jpeg"
+import HeroImg from './images.jpeg'
 
 function Hero() {
 
@@ -29,9 +29,10 @@ function Hero() {
       <div className="container">
         <div className="hero-container">
 
+          {/* CONTENT */}
           <div className="hero-content fade-in">
             <h1>
-              Hi, I'm <span>Your Name</span> 👋
+              Hi, I'm <span>Musayev Otabek</span> 👋
             </h1>
 
             <h2 className="typing">{text}|</h2>
@@ -46,8 +47,12 @@ function Hero() {
             </div>
           </div>
 
+          {/* IMAGE */}
           <div className="hero-img fade-in">
-            <img src={heroImg} alt="hero" />
+            <img 
+              src={HeroImg}
+              alt="hero"
+            />
           </div>
 
         </div>

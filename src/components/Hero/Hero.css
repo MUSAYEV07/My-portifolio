@@ -1,9 +1,19 @@
+/* background animation */
 .hero {
-  background: #0f0f0f;
-  color: white;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  color: white;
+  background: linear-gradient(-45deg, #0f0f0f, #111, #0f0f0f, #1a1a1a);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+  padding: 60px 0;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -19,26 +29,34 @@
   gap: 50px;
 }
 
-/* content */
+/* text */
 .hero-content h1 {
   font-size: 42px;
   margin-bottom: 10px;
 }
 
+/* gradient name */
 .hero-content h1 span {
-  color: rgb(60,166,219);
+  background: linear-gradient(90deg, #3ca6db, #6a5cff, #00ffd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-content h2 {
   font-size: 28px;
   margin-bottom: 15px;
-  color: #ccc;
+  color: rgb(60,166,219);
 }
 
 .hero-content p {
   margin-bottom: 25px;
   color: #aaa;
   max-width: 500px;
+}
+
+/* typing */
+.typing {
+  min-height: 30px;
 }
 
 /* buttons */
@@ -55,15 +73,17 @@
   transition: 0.3s;
 }
 
+/* primary */
 .primary {
   background: rgb(60,166,219);
   color: white;
 }
 
 .primary:hover {
-  background: rgb(40,140,190);
+  box-shadow: 0 0 20px rgb(60,166,219);
 }
 
+/* secondary */
 .secondary {
   border: 1px solid white;
   color: white;
@@ -72,6 +92,7 @@
 .secondary:hover {
   background: white;
   color: black;
+  box-shadow: 0 0 15px white;
 }
 
 /* image */
@@ -79,9 +100,16 @@
   width: 350px;
   max-width: 100%;
   border-radius: 20px;
+  box-shadow: 0 0 20px rgba(60,166,219,0.5);
+  transition: 0.3s;
 }
 
-/* fade animation */
+.hero-img img:hover {
+  box-shadow: 0 0 40px rgba(60,166,219,0.9);
+  transform: scale(1.05);
+}
+
+/* animation */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -95,20 +123,9 @@
   }
 }
 
-/* typing cursor */
-.typing {
-  color: rgb(60,166,219);
-  min-height: 30px;
-}
+/* ===== RESPONSIVE ===== */
 
-/* ================= RESPONSIVE ================= */
-
-/* planshet */
 @media (max-width: 992px) {
-  .hero-container {
-    gap: 30px;
-  }
-
   .hero-content h1 {
     font-size: 34px;
   }
@@ -122,31 +139,21 @@
   }
 }
 
-/* telefon */
 @media (max-width: 768px) {
-  .hero {
-    padding: 60px 0;
-  }
-
   .hero-container {
     flex-direction: column-reverse;
     text-align: center;
-  }
-
-  .hero-content p {
-    margin: auto;
   }
 
   .hero-buttons {
     justify-content: center;
   }
 
-  .hero-img img {
-    width: 250px;
+  .hero-content p {
+    margin: auto;
   }
 }
 
-/* kichik telefon */
 @media (max-width: 480px) {
   .hero-content h1 {
     font-size: 26px;
@@ -156,16 +163,7 @@
     font-size: 20px;
   }
 
-  .hero-content p {
-    font-size: 14px;
-  }
-
-  .btn {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-
   .hero-img img {
-    width: 200px;
+    width: 220px;
   }
 }
