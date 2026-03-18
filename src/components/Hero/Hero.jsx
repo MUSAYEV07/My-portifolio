@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
 import HeroImg from './images.jpeg'
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 function Hero() {
 
@@ -29,7 +30,6 @@ function Hero() {
       <div className="container">
         <div className="hero-container">
 
-          {/* CONTENT */}
           <div className="hero-content fade-in">
             <h1>
               Hi, I'm <span>Musayev Otabek</span> 👋
@@ -42,12 +42,10 @@ function Hero() {
             </p>
 
             <div className="hero-buttons">
-              <a href="#" className="btn primary">Hire Me</a>
-              <a href="#" className="btn secondary">Download CV</a>
+              <a href="#" className="btn primary">Read More</a>
             </div>
           </div>
 
-          {/* IMAGE */}
           <div className="hero-img fade-in">
             <img 
               src={HeroImg}
