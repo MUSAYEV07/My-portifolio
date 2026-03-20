@@ -1,5 +1,5 @@
 .hero {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   color: white;
@@ -15,7 +15,6 @@
   100% { background-position: 0% 50%; }
 }
 
-
 .hero-container {
   display: flex;
   align-items: center;
@@ -25,7 +24,6 @@
 
 .hero-content h1 {
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
 .hero-content h1 span {
@@ -36,12 +34,10 @@
 
 .hero-content h2 {
   font-size: 28px;
-  margin-bottom: 15px;
   color: rgb(60,166,219);
 }
 
 .hero-content p {
-  margin-bottom: 25px;
   color: #aaa;
   max-width: 500px;
 }
@@ -50,11 +46,9 @@
   min-height: 30px;
 }
 
+/* BUTTON */
 .hero-buttons {
-  margin-top: 40px;
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .btn {
@@ -66,109 +60,62 @@
 
 .primary {
   background: rgb(60,166,219);
-  animation: bounce 1.7s infinite;
   color: white;
-  width: 120px;
-  height: 35px;
-  align-items: center;
-  display: flex;
-  justify-content: space-around;
-}
-
-@keyframes bounce {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  display: inline-block;
 }
 
 .primary:hover {
   box-shadow: 0 0 20px rgb(60,166,219);
 }
 
-.secondary {
-  border: 1px solid white;
-  color: white;
-}
-
-.secondary:hover {
-  background: white;
-  color: black;
-  box-shadow: 0 0 15px white;
-}
-
 .hero-img img {
   width: 350px;
-  max-width: 100%;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(60,166,219,0.9);
   transition: 0.3s;
 }
 
 .hero-img img:hover {
-  box-shadow: 0 0 40px rgba(60,166,219,0.9);
+  box-shadow: -15px 0 40px rgba(60,166,219,0.9);
   transform: scale(1.05);
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeIn 1s ease forwards;
+/* SOCIAL */
+.social-links {
+  margin-top: 30px;
+  display: flex;   /* 🔥 FIX */
+  gap: 20px;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.social-links a {
+  font-size: 28px;
+  color: white;
+  transition: 0.3s;
 }
 
-/* ===== RESPONSIVE ===== */
-
-@media (max-width: 992px) {
-  .hero-content h1 {
-    font-size: 34px;
-  }
-
-  .hero-content h2 {
-    font-size: 24px;
-  }
-
-  .hero-img img {
-    width: 300px;
-  }
+.social-links a:hover {
+  transform: scale(1.2);
 }
 
+/* ICON COLORS */
+.social-links a:nth-child(1):hover {
+  color: red;
+}
+
+.social-links a:nth-child(2):hover {
+  color: #E1306C;
+}
+
+.social-links a:nth-child(3):hover {
+  color: #229ED9;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-container {
     flex-direction: column-reverse;
     text-align: center;
   }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  .hero-content p {
-    margin: auto;
-  }
 }
 
-@media (max-width: 480px) {
-  .hero-content h1 {
-    font-size: 26px;
-  }
 
-  .hero-content h2 {
-    font-size: 20px;
-  }
-
-  .hero-img img {
-    width: 220px;
-  }
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
