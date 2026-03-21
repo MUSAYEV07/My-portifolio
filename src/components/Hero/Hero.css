@@ -83,8 +83,15 @@
 /* SOCIAL */
 .social-links {
   margin-top: 30px;
-  display: flex;   /* 🔥 FIX */
+  display: flex; 
+  justify-content: center;  
   gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .social-links {
+    justify-content: flex-start;
+  }
 }
 
 .social-links a {
