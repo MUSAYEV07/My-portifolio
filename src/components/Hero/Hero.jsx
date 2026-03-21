@@ -44,18 +44,21 @@ function Hero() {
             </p>
 
             <div className="hero-buttons">
-              <a href="#" className="btn primary">Read More</a>
+              <a href="#" className="sparkle-btn">
+                Read More
+                <span className="stars"></span>
+              </a>
             </div>
 
             <div className="social-links">
-              <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.youtube.com/" target="_blank" rel="noreferrer">
                 <FaYoutube />
               </a>
-              <a className="you" href="https://www.instagram.com/the.musayev.officeall/" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                 <FaInstagram />
               </a>
-              <a href="https://t.me/Musayev_O_07" target="_blank" rel="noopener noreferrer">
-                <FaTelegram className="bb"/>
+              <a href="https://t.me/" target="_blank" rel="noreferrer">
+                <FaTelegram />
               </a>
             </div>
           </div>

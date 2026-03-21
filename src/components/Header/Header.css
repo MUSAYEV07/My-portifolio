@@ -1,7 +1,9 @@
-.header{
+.header {
   background: black;
   padding: 20px 0;
   color: white;
+  position: relative;
+  z-index: 10;
 }
 
 .header-container{
@@ -19,18 +21,81 @@
   list-style: none;
 }
 
-.list a{
+.header a,
+.list a {
   text-decoration: none;
   color: white;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* hamburger */
+.header a::after,
+.list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: rgb(60,166,219);
+  transition: width 0.3s ease;
+}
+
+.header a .sparkle,
+.list a .sparkle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.header a:hover,
+.list a:hover {
+  color: rgb(60,166,219);
+}
+
+.header a:hover::after,
+.list a:hover::after {
+  width: 100%;
+}
+
+.header a:hover .sparkle::before,
+.header a:hover .sparkle::after,
+.list a:hover .sparkle::before,
+.list a:hover .sparkle::after {
+  content: "✦";
+  position: absolute;
+  color: #fff;
+  animation: sparkle 1s infinite;
+}
+
+.header a:hover .sparkle::before,
+.list a:hover .sparkle::before {
+  top: -5px;
+  left: -5px;
+}
+
+.header a:hover .sparkle::after,
+.list a:hover .sparkle::after {
+  bottom: -5px;
+  right: -5px;
+}
+
+@keyframes sparkle{
+  0%{transform: scale(0); opacity: 0;}
+  50%{transform: scale(1); opacity: 1;}
+  100%{transform: scale(0); opacity: 0;}
+}
 
 .menu-btn{
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 20;
 }
 
 .menu-btn span{
@@ -39,8 +104,6 @@
   background: white;
   transition: 0.3s;
 }
-
-/* animation */
 
 .menu-btn.open span:nth-child(1){
   transform: rotate(45deg) translate(5px,5px);
@@ -54,10 +117,7 @@
   transform: rotate(-45deg) translate(6px,-6px);
 }
 
-/* responsive */
-
 @media (max-width:768px){
-
   .menu-btn{
     display: flex;
   }
@@ -79,33 +139,8 @@
     display: flex;
   }
 
-}
-
-.list a{
-  text-decoration: none;
-  color: white;
-  font-size: 16px;
-  position: relative;
-  transition: 0.3s;
-}
-
-/* hover rang o'zgarishi */
-.list a:hover{
-  color: rgb(60,166,219);
-}
-
-/* underline animatsiya */
-.list a::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: rgb(60,166,219);
-  transition: 0.3s;
-}
-
-.list a:hover::after{
-  width: 100%;
+  
+  .list a::after {
+    bottom: -10px;
+  }
 }
