@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaCode, FaServer,FaPenFancy } from "react-icons/fa";
 import './Skills.css'
 
 function Skills() {
@@ -8,16 +9,19 @@ function Skills() {
        <div className="skills-container">
 
   <div className="skills-card">
+    <FaCode/>
     <h2 className='skills-card-title'>Frontend</h2>
     <p className='skills-card-text'>HTML, CSS, JS, React</p>
   </div>
 
   <div className="skills-card">
+    <FaServer />
     <h2 className='skills-card-title'>Backend</h2>
     <p className='skills-card-text'>Node.js, Express</p>
   </div>
 
   <div className="skills-card">
+    <FaPenFancy/>
     <h2 className='skills-card-title'>Tools</h2>
     <p className='skills-card-text'>Git, Figma</p>
   </div>
