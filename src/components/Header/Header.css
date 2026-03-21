@@ -2,8 +2,11 @@
   background: black;
   padding: 20px 0;
   color: white;
-  position: relative;
-  z-index: 10;
+  position: fixed;
+  top: 0;          /* MUHIM */
+  left: 0;         /* MUHIM */
+  width: 100%;     /* MUHIM */
+  z-index: 1000;   /* ustida turishi uchun */
 }
 
 .header-container{

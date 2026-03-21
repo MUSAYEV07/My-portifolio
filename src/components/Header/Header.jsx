@@ -14,10 +14,10 @@ function Header() {
         </div>
 
         <ul className={`list ${menuOpen ? "active" : ""}`}>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#Hero">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Service">Service</a></li>
+          <li><a href="#Contact">Contact</a></li>
         </ul>
 
         <div 
