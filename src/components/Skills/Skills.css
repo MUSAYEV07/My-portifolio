@@ -1,6 +1,5 @@
-/* umumiy section */
 .skills {
-  padding: 20px 0;
+  padding: 40px 0;
   background: #0f0f0f;
   color: white;
 }
@@ -11,14 +10,12 @@
   padding: 0 20px;
 }
 
-/* cards joylashuvi */
 .skills-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-/* card */
 .skills-card {
   background: #1a1a1a;
   padding: 30px 20px;
@@ -28,36 +25,31 @@
   cursor: pointer;
 }
 
-/* hover effect */
 .skills-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 25px rgba(60,166,219,0.3);
 }
 
-/* image */
 .skills-card-images img {
   width: 60px;
   margin-bottom: 20px;
 }
 
-/* title */
 .skills-card-title {
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-/* text */
 .skills-card-text {
   font-size: 14px;
   color: #ccc;
-}/* tablet */
+}
 @media (max-width: 992px) {
   .skills-container {
     grid-template-columns: repeat(1, 0.5fr);
   }
 }
 
-/* mobile */
 @media (max-width: 600px) {
   .skills-container {
     grid-template-columns: 1fr;
