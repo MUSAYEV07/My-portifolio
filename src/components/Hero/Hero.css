@@ -107,8 +107,9 @@
 }
 
 .hero-img img {
-  width: 350px;
-  border-radius: 20px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
   box-shadow: 0 0 20px rgba(60,166,219,0.9);
   transition: 0.3s;
 }
