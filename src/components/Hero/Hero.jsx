@@ -62,10 +62,14 @@ function Hero() {
               </a>
             </div>
           </div>
-
-          <div className="hero-img animate__animated animate__fadeInRight">
-            <img src={HeroImg} alt="hero" />
+          <div className="salom">
+            <div className="hero-img animate__animated animate__fadeInRight">
+              <img src={HeroImg} alt="hero" />
+            </div>
+            <div className="position-hover">
+            </div>
           </div>
+        
 
         </div>
       </div>

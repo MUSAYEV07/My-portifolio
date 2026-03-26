@@ -105,6 +105,10 @@
   50%{transform:scale(1);opacity:1;}
   100%{transform:scale(0);opacity:0;}
 }
+.salom {
+position: relative;
+}
+
 
 .hero-img img {
   width: 320px;
@@ -114,9 +118,33 @@
   transition: 0.3s;
 }
 
+
+.position-hover {
+  width: 300px;
+  height: 300px;
+  background-color: #E1306C;
+  border-radius: 50%;
+  box-shadow: 
+    0 0 10px #E1306C,   /* inner glow */
+    0 0 20px #E1306C,   /* medium glow */
+    0 0 30px #E1306C,   /* outer glow */
+    0 5px 15px rgba(0, 0, 0, 0.3); /* subtle depth shadow */
+  transition: all 0.3s ease;
+}
+
+.position-hover:hover {
+  box-shadow: 
+    0 0 15px #E1306C,
+    0 0 30px #E1306C,
+    0 0 45px #E1306C,
+    0 10px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+}
+
 .hero-img img:hover {
   box-shadow: -15px 0 40px rgba(60,166,219,0.9);
   transform: scale(1.05);
+  position: static;
 }
 
 .social-links {
