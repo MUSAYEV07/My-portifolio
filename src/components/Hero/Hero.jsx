@@ -66,8 +66,6 @@ function Hero() {
             <div className="hero-img animate__animated animate__fadeInRight">
               <img src={HeroImg} alt="hero" />
             </div>
-            <div className="position-hover">
-            </div>
           </div>
         
 
