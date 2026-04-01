@@ -1,55 +1,94 @@
-// Loader.jsx
+// AdvancedLoader.jsx
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Loader() {
+export default function AdvancedLoader() {
   const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
-    return () => clearTimeout(timer);
+    let interval = setInterval(() => {
+      setProgress((old) => {
+        if (old >= 100) {
+          clearInterval(interval);
+          setTimeout(() => setLoading(false), 400);
+          return 100;
+        }
+        return old + 5;
+      });
+    }, 100);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {loading ? (
         <motion.div
           key="loader"
+          className="fixed inset-0 flex flex-col items-center justify-center bg-black text-white z-50"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8 }}
-          className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 text-white z-50"
         >
-          <div className="flex flex-col items-center justify-center">
-            {/* Spinner */}
-            <motion.div
-              className="w-20 h-20 rounded-full border-8 border-t-8 border-transparent border-t-white mb-6 shadow-lg"
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-            />
+          {/* Logo */}
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-bold mb-10 tracking-widest"
+          >
+            MY APP
+          </motion.div>
 
-            {/* Animated Text */}
-            <motion.h2
-              className="text-2xl font-bold tracking-wider"
-              animate={{ y: [0, -15, 0], scale: [1, 1.1, 1] }}
-              transition={{ repeat: Infinity, duration: 0.8 }}
-            >
-              Yuklanmoqda...
-            </motion.h2>
+          {/* Spinner */}
+          <motion.div
+            className="w-14 h-14 border-4 border-white/20 border-t-white rounded-full"
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+          />
+
+          {/* Progress Bar */}
+          <div className="w-64 h-1 bg-white/20 mt-10 rounded overflow-hidden">
+            <motion.div
+              className="h-full bg-white"
+              initial={{ width: 0 }}
+              animate={{ width: `${progress}%` }}
+              transition={{ ease: "easeOut" }}
+            />
           </div>
+
+          {/* Percentage */}
+          <motion.p
+            className="mt-4 text-sm text-white/70"
+            key={progress}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            {progress}%
+          </motion.p>
         </motion.div>
       ) : (
         <motion.div
           key="content"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200"
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex items-center justify-center h-screen bg-gradient-to-r from-blue-100 to-purple-200 text-blue-800 font-sans"
         >
-          <div className="text-center">
-            <h1 className="text-5xl font-extrabold mb-4">Sayt ochildi 🚀</h1>
-            <p className="text-lg">Xush kelibsiz! Saytga kirish tayyor.</p>
-          </div>
+          <motion.div
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-center"
+          >
+            <h1 className="text-5xl font-extrabold mb-4 text-blue-900">
+              Sayt ochildi 🚀
+            </h1>
+            <p className="text-lg text-blue-700">
+              Premium loading tajribasi tayyor!
+            </p>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
